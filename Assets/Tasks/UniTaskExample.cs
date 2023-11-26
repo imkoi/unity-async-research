@@ -16,6 +16,8 @@ public class UniTaskExample : ExampleBase
         while (!IsDone && !CancellationToken.IsCancellationRequested)
         {
             await UniTask.Yield();
+            await UniTask.Yield();
+            await UniTask.Yield();
         }
     }
 }

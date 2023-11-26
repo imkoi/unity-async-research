@@ -16,6 +16,8 @@ public class TaskExample : ExampleBase
         while (!IsDone && !CancellationToken.IsCancellationRequested)
         {
             await Task.Yield();
+            await Task.Yield();
+            await Task.Yield();
         }
     }
 }

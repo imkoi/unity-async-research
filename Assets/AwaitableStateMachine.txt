@@ -1,0 +1,262 @@
+﻿.class nested private auto ansi sealed beforefieldinit '<Delay>d__1'
+	extends [mscorlib]System.ValueType
+	implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+	.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+		01 00 00 00
+	)
+	// Fields
+	.field public int32 '<>1__state'
+	.field public valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder '<>t__builder'
+	.field public class AwaitableExample '<>4__this'
+	.field private valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter '<>u__1'
+
+	// Methods
+	.method private final hidebysig newslot virtual 
+		instance void MoveNext () cil managed 
+	{
+		.override method instance void [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext()
+		// Method begins at RVA 0x20c8
+		// Header size: 12
+		// Code size: 405 (0x195)
+		.maxstack 3
+		.locals init (
+			[0] int32,
+			[1] class AwaitableExample,
+			[2] valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter,
+			[3] valuetype [mscorlib]System.Threading.CancellationToken,
+			[4] class [mscorlib]System.Exception
+		)
+
+		// int num = <>1__state;
+		IL_0000: ldarg.0
+		IL_0001: ldfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+		IL_0006: stloc.0
+		// AwaitableExample awaitableExample = <>4__this;
+		IL_0007: ldarg.0
+		IL_0008: ldfld class AwaitableExample AwaitableExample/'<Delay>d__1'::'<>4__this'
+		IL_000d: stloc.1
+		.try
+		{
+			// switch (num)
+			IL_000e: ldloc.0
+			IL_000f: switch (IL_0065, IL_00c8, IL_0128)
+
+			IL_0020: br IL_014b
+
+			// awaiter = Awaitable.NextFrameAsync().GetAwaiter();
+			IL_0025: ldloca.s 3
+			IL_0027: initobj [mscorlib]System.Threading.CancellationToken
+			IL_002d: ldloc.3
+			IL_002e: call class [UnityEngine.CoreModule]UnityEngine.Awaitable [UnityEngine.CoreModule]UnityEngine.Awaitable::NextFrameAsync(valuetype [mscorlib]System.Threading.CancellationToken)
+			IL_0033: callvirt instance valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter [UnityEngine.CoreModule]UnityEngine.Awaitable::GetAwaiter()
+			IL_0038: stloc.2
+			// if (!awaiter.IsCompleted)
+			IL_0039: ldloca.s 2
+			IL_003b: call instance bool [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter::get_IsCompleted()
+			IL_0040: brtrue.s IL_0081
+
+			// num = (<>1__state = 0);
+			IL_0042: ldarg.0
+			IL_0043: ldc.i4.0
+			IL_0044: dup
+			IL_0045: stloc.0
+			IL_0046: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+			// <>u__1 = awaiter;
+			IL_004b: ldarg.0
+			IL_004c: ldloc.2
+			IL_004d: stfld valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			// <>t__builder.AwaitOnCompleted(ref awaiter, ref this);
+			IL_0052: ldarg.0
+			IL_0053: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder AwaitableExample/'<Delay>d__1'::'<>t__builder'
+			IL_0058: ldloca.s 2
+			IL_005a: ldarg.0
+			IL_005b: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder::AwaitOnCompleted<valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter, valuetype AwaitableExample/'<Delay>d__1'>(!!0&, !!1&)
+			// return;
+			IL_0060: leave IL_0194
+
+			// awaiter = <>u__1;
+			IL_0065: ldarg.0
+			IL_0066: ldfld valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			IL_006b: stloc.2
+			// <>u__1 = default(Awaitable.Awaiter);
+			IL_006c: ldarg.0
+			IL_006d: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			IL_0072: initobj [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter
+			// num = (<>1__state = -1);
+			IL_0078: ldarg.0
+			IL_0079: ldc.i4.m1
+			IL_007a: dup
+			IL_007b: stloc.0
+			IL_007c: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+
+			// awaiter.GetResult();
+			IL_0081: ldloca.s 2
+			IL_0083: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter::GetResult()
+			// awaiter = Awaitable.NextFrameAsync().GetAwaiter();
+			IL_0088: ldloca.s 3
+			IL_008a: initobj [mscorlib]System.Threading.CancellationToken
+			IL_0090: ldloc.3
+			IL_0091: call class [UnityEngine.CoreModule]UnityEngine.Awaitable [UnityEngine.CoreModule]UnityEngine.Awaitable::NextFrameAsync(valuetype [mscorlib]System.Threading.CancellationToken)
+			IL_0096: callvirt instance valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter [UnityEngine.CoreModule]UnityEngine.Awaitable::GetAwaiter()
+			IL_009b: stloc.2
+			// if (!awaiter.IsCompleted)
+			IL_009c: ldloca.s 2
+			IL_009e: call instance bool [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter::get_IsCompleted()
+			IL_00a3: brtrue.s IL_00e4
+
+			// num = (<>1__state = 1);
+			IL_00a5: ldarg.0
+			IL_00a6: ldc.i4.1
+			IL_00a7: dup
+			IL_00a8: stloc.0
+			IL_00a9: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+			// <>u__1 = awaiter;
+			IL_00ae: ldarg.0
+			IL_00af: ldloc.2
+			IL_00b0: stfld valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			// <>t__builder.AwaitOnCompleted(ref awaiter, ref this);
+			IL_00b5: ldarg.0
+			IL_00b6: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder AwaitableExample/'<Delay>d__1'::'<>t__builder'
+			IL_00bb: ldloca.s 2
+			IL_00bd: ldarg.0
+			IL_00be: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder::AwaitOnCompleted<valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter, valuetype AwaitableExample/'<Delay>d__1'>(!!0&, !!1&)
+			// return;
+			IL_00c3: leave IL_0194
+
+			// awaiter = <>u__1;
+			IL_00c8: ldarg.0
+			IL_00c9: ldfld valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			IL_00ce: stloc.2
+			// <>u__1 = default(Awaitable.Awaiter);
+			IL_00cf: ldarg.0
+			IL_00d0: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			IL_00d5: initobj [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter
+			// num = (<>1__state = -1);
+			IL_00db: ldarg.0
+			IL_00dc: ldc.i4.m1
+			IL_00dd: dup
+			IL_00de: stloc.0
+			IL_00df: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+
+			// awaiter.GetResult();
+			IL_00e4: ldloca.s 2
+			IL_00e6: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter::GetResult()
+			// awaiter = Awaitable.NextFrameAsync().GetAwaiter();
+			IL_00eb: ldloca.s 3
+			IL_00ed: initobj [mscorlib]System.Threading.CancellationToken
+			IL_00f3: ldloc.3
+			IL_00f4: call class [UnityEngine.CoreModule]UnityEngine.Awaitable [UnityEngine.CoreModule]UnityEngine.Awaitable::NextFrameAsync(valuetype [mscorlib]System.Threading.CancellationToken)
+			IL_00f9: callvirt instance valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter [UnityEngine.CoreModule]UnityEngine.Awaitable::GetAwaiter()
+			IL_00fe: stloc.2
+			// if (!awaiter.IsCompleted)
+			IL_00ff: ldloca.s 2
+			IL_0101: call instance bool [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter::get_IsCompleted()
+			IL_0106: brtrue.s IL_0144
+
+			// num = (<>1__state = 2);
+			IL_0108: ldarg.0
+			IL_0109: ldc.i4.2
+			IL_010a: dup
+			IL_010b: stloc.0
+			IL_010c: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+			// <>u__1 = awaiter;
+			IL_0111: ldarg.0
+			IL_0112: ldloc.2
+			IL_0113: stfld valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			// <>t__builder.AwaitOnCompleted(ref awaiter, ref this);
+			IL_0118: ldarg.0
+			IL_0119: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder AwaitableExample/'<Delay>d__1'::'<>t__builder'
+			IL_011e: ldloca.s 2
+			IL_0120: ldarg.0
+			IL_0121: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder::AwaitOnCompleted<valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter, valuetype AwaitableExample/'<Delay>d__1'>(!!0&, !!1&)
+			// return;
+			IL_0126: leave.s IL_0194
+
+			// awaiter = <>u__1;
+			IL_0128: ldarg.0
+			IL_0129: ldfld valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			IL_012e: stloc.2
+			// <>u__1 = default(Awaitable.Awaiter);
+			IL_012f: ldarg.0
+			IL_0130: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter AwaitableExample/'<Delay>d__1'::'<>u__1'
+			IL_0135: initobj [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter
+			// num = (<>1__state = -1);
+			IL_013b: ldarg.0
+			IL_013c: ldc.i4.m1
+			IL_013d: dup
+			IL_013e: stloc.0
+			IL_013f: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+
+			// awaiter.GetResult();
+			IL_0144: ldloca.s 2
+			IL_0146: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/Awaiter::GetResult()
+
+			// if (!awaitableExample.IsDone && !awaitableExample.CancellationToken.IsCancellationRequested)
+			IL_014b: ldloc.1
+			IL_014c: call instance bool DefaultNamespace.ExampleBase::get_IsDone()
+			IL_0151: brtrue.s IL_0166
+
+			IL_0153: ldloc.1
+			IL_0154: call instance valuetype [mscorlib]System.Threading.CancellationToken DefaultNamespace.ExampleBase::get_CancellationToken()
+			IL_0159: stloc.3
+			// }
+			IL_015a: ldloca.s 3
+			IL_015c: call instance bool [mscorlib]System.Threading.CancellationToken::get_IsCancellationRequested()
+			IL_0161: brfalse IL_0025
+
+			IL_0166: leave.s IL_0181
+		} // end .try
+		catch [mscorlib]System.Exception
+		{
+			// catch (Exception exception)
+			IL_0168: stloc.s 4
+			// <>1__state = -2;
+			IL_016a: ldarg.0
+			IL_016b: ldc.i4.s -2
+			IL_016d: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+			// <>t__builder.SetException(exception);
+			IL_0172: ldarg.0
+			IL_0173: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder AwaitableExample/'<Delay>d__1'::'<>t__builder'
+			IL_0178: ldloc.s 4
+			IL_017a: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder::SetException(class [mscorlib]System.Exception)
+			// return;
+			IL_017f: leave.s IL_0194
+		} // end handler
+
+		// <>1__state = -2;
+		IL_0181: ldarg.0
+		IL_0182: ldc.i4.s -2
+		IL_0184: stfld int32 AwaitableExample/'<Delay>d__1'::'<>1__state'
+		// <>t__builder.SetResult();
+		IL_0189: ldarg.0
+		IL_018a: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder AwaitableExample/'<Delay>d__1'::'<>t__builder'
+		IL_018f: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder::SetResult()
+
+		// }
+		IL_0194: ret
+	} // end of method '<Delay>d__1'::MoveNext
+
+	.method private final hidebysig newslot virtual 
+		instance void SetStateMachine (
+			class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine
+		) cil managed 
+	{
+		.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.override method instance void [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)
+		// Method begins at RVA 0x2288
+		// Header size: 1
+		// Code size: 13 (0xd)
+		.maxstack 8
+
+		// <>t__builder.SetStateMachine(stateMachine);
+		IL_0000: ldarg.0
+		IL_0001: ldflda valuetype [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder AwaitableExample/'<Delay>d__1'::'<>t__builder'
+		IL_0006: ldarg.1
+		IL_0007: call instance void [UnityEngine.CoreModule]UnityEngine.Awaitable/AwaitableAsyncMethodBuilder::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)
+		// }
+		IL_000c: ret
+	} // end of method '<Delay>d__1'::SetStateMachine
+}

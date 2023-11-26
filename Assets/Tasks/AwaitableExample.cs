@@ -16,6 +16,8 @@ public class AwaitableExample : ExampleBase
         while (!IsDone && !CancellationToken.IsCancellationRequested)
         {
             await Awaitable.NextFrameAsync();
+            await Awaitable.NextFrameAsync();
+            await Awaitable.NextFrameAsync();
         }
     }
 }
