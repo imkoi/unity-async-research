@@ -47,7 +47,6 @@ Strategy:
 3. Create implementations foreach task library that will run simple logic
 4. Check startup allocations and alloc per frame
 5. Check PlayerLoop performance (each library will use its own player loop to schedule and invoke completion events on main thread)
-6. Check code gen in ilCode, since IL2CPP will generate same code for MethodStateMachines
 
 ### Allocations and Frametime
 Note: I dont cover hard cases here, such awaiting .Net Task
@@ -60,28 +59,48 @@ method that return Task(to have only processing speed), so i dont test it
 
 ### 100 background tasks:
 ##### Allocations on execute:
-.Net Task
-
-##### Allocations per frame:
-.Net Task
+* UnityEngine.Awaitable: 2.2 kb / **122%**
+* System.Threading.Task: 2.4 kb / **133%**
+* Cysharp.UniTask: 1.8 kb / **100%**
 
 ### 500 background tasks:
 ##### Allocations on execute:
-.Net Task
-
-##### Allocations per frame:
-.Net Task
+* UnityEngine.Awaitable: 8.3 kb / **105%**
+* System.Threading.Task: 11.8 kb / **149%**
+* Cysharp.UniTask: 7.9 kb / **100%**
 
 ### 50000 background tasks:
-##### Allocations on execute:
-.Net Task
-
-##### Allocations per frame:
-.Net Task
-
-##### Frametime on execute:
-.Net Task
-
 ##### Frametime per frame:
-.Net Task
+* UnityEngine.Awaitable: 12.11 ms / **197%**
+* System.Threading.Task: 883 ms / **14428%**
+* Cysharp.UniTask: 6.12 ms / **100%**
 
+Here we can see that UniTask is better for runtime performance and allocations
+
+### Codegen size
+
+CodeGen size was tested with generation 250 number of 
+tasks that call each other,
+so state machine will not be small. CodeGenerator is located in 
+_Assets/CodeGen/CodeGenerator.cs_
+
+On builds i also inspect il2cpp project to
+ensure that codegen code is not stripped.
+
+Results of codegen code could be founded at:
+* _Assets/CodeGen/Awaitable/AwaitableGenerated.cs_
+* _Assets/CodeGen/Task/TaskGenerated.cs_
+* _Assets/CodeGen/UniTask/UniTaskGenerated.cs_
+
+Results:
+* Empty: 22.256 mb
+* UnityEngine.Awaitable: 29.026 mb / **100%**
+* System.Threading.Task: 29.331 mb / **102%**
+* Cysharp.UniTask: 30.933 mb / **107%**
+
+By result we see that cpp compiler can strip even mscore.dll code that 
+not used, because **UnityEngine.Awaitable** codegen size are less 
+than with **System.Threading.Tasks**
+
+Also as we see there is not a big codegen hit for Cysharp.UniTask,
+but they have much better runtime performance and less allocations

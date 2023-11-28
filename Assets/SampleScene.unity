@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efee4b81b9abc5348a891c9b081e4565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 100
+  _capacity: 50000
   _acitveSeconds: 500
 --- !u!4 &184079954
 Transform:
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbcf358ff52d674293ca82fc096a406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 100
+  _capacity: 50000
   _acitveSeconds: 500
 --- !u!4 &609859989
 Transform:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e70d09940454664dab583b3ffe3c7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 100
+  _capacity: 50000
   _acitveSeconds: 500
 --- !u!4 &1598573919
 Transform:

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/CodeGen/UniTask/UniTask.unity
+    guid: 9aa181889d167124b9ceaf7de776d43c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
