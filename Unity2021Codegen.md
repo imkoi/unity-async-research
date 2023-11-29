@@ -1,16 +1,12 @@
 ### Faster runtime configuration
 
 Results for 250 generated tasks:
-* Empty: 22.263 mb
-* UnityEngine.Awaitable: 29.026 mb / **100%**
-* System.Threading.Task: 29.331 mb / **102%**
-* System.Threading.ValueTask: 29.969 mb / **103%**
-* Cysharp.UniTask: 30.933 mb / **107%**
+* Empty: 22.284 mb
+* System.Threading.Task: 29.464 mb / **100%**
+* Cysharp.UniTask: 30.404 mb / **103%**
 
 ### Smaller build configuration
 Results for 250 generated tasks:
-* Empty: 13.443 mb
-* UnityEngine.Awaitable: 19.955 mb / **100%**
-* System.Threading.Task: 20.673 mb / **104%**
-* System.Threading.ValueTask: 20.275 mb / **102%**
-* Cysharp.UniTask: 20.368 mb / **102%**
+* Empty: 13.275 mb
+* System.Threading.Task: 20.549 mb / **102%**
+* Cysharp.UniTask: 20.176 mb / **100%**
