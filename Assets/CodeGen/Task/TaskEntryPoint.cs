@@ -8,10 +8,10 @@ public class TaskEntryPoint : MonoBehaviour
     {
         var taskGenerated = new TaskGenerated();
 
-        Forget(taskGenerated.Method10(CancellationToken.None));
+        Forget(taskGenerated.Method500(CancellationToken.None));
     }
 
-    private async void Forget(Task task)
+    private async void Forget(Task<int> task)
     {
         await task;
     }

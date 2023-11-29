@@ -24,7 +24,7 @@ namespace CodeGen
                 className,
                 "Awaitable",
                 "await Awaitable.NextFrameAsync();",
-                250);
+                500);
         }
         
         [MenuItem("Code Generator/Task")]
@@ -42,7 +42,25 @@ namespace CodeGen
                 className,
                 "Task",
                 "await Task.Yield();",
-                250);
+                500);
+        }
+        
+        [MenuItem("Code Generator/ValueTask")]
+        public static void GenerateValueTask()
+        {
+            var usages = new string[]
+            {
+                "using System.Threading;",
+                "using System.Threading.Tasks;"
+            };
+            var className = "ValueTaskGenerated";
+
+            Generate("/CodeGen/ValueTask/ValueTaskGenerated.cs",
+                usages,
+                className,
+                "ValueTask",
+                "await Task.Yield();",
+                500);
         }
         
         [MenuItem("Code Generator/UniTask")]
@@ -60,7 +78,7 @@ namespace CodeGen
                 className,
                 "UniTask",
                 "await UniTask.Yield();",
-                250);
+                500);
         }
 
         private static void Generate(

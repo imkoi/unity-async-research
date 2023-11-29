@@ -8,6 +8,6 @@ public class UniTaskEntryPoint : MonoBehaviour
     {
         var uniTaskGenerated = new UniTaskGenerated();
 
-        uniTaskGenerated.Method10(CancellationToken.None).Forget();
+        uniTaskGenerated.Method500(CancellationToken.None).Forget();
     }
 }
